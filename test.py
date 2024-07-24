@@ -1,7 +1,8 @@
-import discord
-from discord.ext import commands, tasks
+import discord # type: ignore
+from discord.ext import commands, tasks # type: ignore
 from collections import defaultdict
 import re
+import gdown
 
 intents = discord.Intents.all()
 intents.messages = True
@@ -74,7 +75,11 @@ async def leaderboard(ctx):
     sorted_users = sorted(user_levels.items(), key=lambda x: x[1], reverse=True)
     leaderboard = "\n".join([f"<@{user_id}> - Level {level}" for user_id, level in sorted_users[:10]])
     await ctx.send(f"Leaderboard:\n{leaderboard}")
-    
+
+url = 'https://drive.google.com/u/0/uc?id=16sBHE4c1UlmEKcxf1kjupzDKkSPGVgdb'
+output = 'token.txt'
+gdown.download(url, output, quiet=False)
+
 with open('token.txt') as f:
     TOKEN = f.readline()
 
