@@ -3,7 +3,7 @@
     "builds" : [
         {"src": "test.py", "use": "@vercel/python"}
     ],
-    "routes": [
-        {"src": "/(.*)", "dest": "index.html"}
+    "rewrites": [
+    { "source": "/", "destination": "/idex.html" }
     ]    
 }
