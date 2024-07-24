@@ -74,5 +74,8 @@ async def leaderboard(ctx):
     sorted_users = sorted(user_levels.items(), key=lambda x: x[1], reverse=True)
     leaderboard = "\n".join([f"<@{user_id}> - Level {level}" for user_id, level in sorted_users[:10]])
     await ctx.send(f"Leaderboard:\n{leaderboard}")
+    
+with open('token.txt') as f:
+    TOKEN = f.readline()
 
-bot.run('MTI2NTYzMzM1Njg4ODkzNjYzOQ.GPxurB.io4cscteKw3i9wlAtVYGKS88WDbOu3IvJGLO3Y') 
+bot.run(TOKEN)
