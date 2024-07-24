@@ -2,8 +2,5 @@
     "version" : 2,
     "builds" : [
         {"src": "test.py", "use": "@vercel/python"}
-    ],
-    "rewrites": [
-    { "source": "/", "destination": "idex.html" }
-    ]    
+    ]  
 }
